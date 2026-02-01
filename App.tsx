@@ -1,22 +1,46 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+
+import MuscleGroupsScreen from './src/screens/MuscleGroupsScreen'
+import SubMuscleScreen from './src/screens/SubMuscleScreen'
+import ExerciseListScreen from './src/screens/ExerciseListScreen'
+import ExerciseDetailScreen from './src/screens/ExerciseDetailScreen'
+
+export type RootStackParamList = {
+  MuscleGroups: undefined
+  SubMuscles: { muscleGroup: string }
+  Exercises: { muscleGroup: string; subMuscle: string }
+  ExerciseDetail: { exerciseName: string }
+}
+
+const Stack = createNativeStackNavigator<RootStackParamList>()
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Hello World</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name='MuscleGroups'
+          component={MuscleGroupsScreen}
+          options={{ title: 'Muscle Groups' }}
+        />
+        <Stack.Screen
+          name='SubMuscles'
+          component={SubMuscleScreen}
+          options={{ title: 'Sub Muscles' }}
+        />
+        <Stack.Screen
+          name='Exercises'
+          component={ExerciseListScreen}
+          options={{ title: 'Exercises' }}
+        />
+        <Stack.Screen
+          name='ExerciseDetail'
+          component={ExerciseDetailScreen}
+          options={{ title: 'Exercise' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  text: {
-    fontSize: 24,
-    fontWeight: '600'
-  }
-})
