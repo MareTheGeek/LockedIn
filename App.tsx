@@ -6,12 +6,22 @@ import MuscleGroupsScreen from './src/screens/MuscleGroupsScreen'
 import SubMuscleScreen from './src/screens/SubMuscleScreen'
 import ExerciseListScreen from './src/screens/ExerciseListScreen'
 import ExerciseDetailScreen from './src/screens/ExerciseDetailScreen'
+import WorkoutScreen from './src/screens/WorkoutScreen'
 
 export type RootStackParamList = {
   MuscleGroups: undefined
   SubMuscles: { muscleGroup: string }
   Exercises: { muscleGroup: string; subMuscle: string }
-  ExerciseDetail: { exerciseName: string }
+  ExerciseDetail: {
+    muscleGroup: string
+    subMuscle: string
+    exerciseName: string
+  }
+  Workout: {
+    muscleGroup: string
+    subMuscle: string
+    exerciseName: string
+  }
 }
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
@@ -39,6 +49,11 @@ export default function App() {
           name='ExerciseDetail'
           component={ExerciseDetailScreen}
           options={{ title: 'Exercise' }}
+        />
+        <Stack.Screen
+          name='Workout'
+          component={WorkoutScreen}
+          options={{ title: 'Workout Session' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

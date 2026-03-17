@@ -21,12 +21,12 @@ const SETS: SetData[] = [
   { setNumber: 4, weight: null, reps: null, rest: null, tempo: null },
 ]
 
-export default function ExerciseDetailScreen({ route }: Props) {
-  const { exerciseName } = route.params
+export default function ExerciseDetailScreen({ route, navigation }: Props) {
+  const { muscleGroup, subMuscle, exerciseName } = route.params
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.exerciseName}>{exerciseName}</Text>
-      <Text style={styles.title}>PR Summary</Text>
+      <Text style={styles.title}>Personal Record</Text>
 
       {SETS.map((set) => (
         <SetCard
@@ -39,7 +39,16 @@ export default function ExerciseDetailScreen({ route }: Props) {
           isBonus={set.setNumber === 4}
         />
       ))}
-      <Pressable style={styles.startButton}>
+      <Pressable
+        style={styles.startButton}
+        onPress={() => {
+          navigation.navigate('Workout', {
+            muscleGroup,
+            subMuscle,
+            exerciseName,
+          })
+        }}
+      >
         <Text style={styles.startText}>Start Workout</Text>
       </Pressable>
     </ScrollView>
@@ -69,6 +78,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   exerciseName: {
-    fontSize: 16
-  }
+    fontSize: 16,
+  },
 })

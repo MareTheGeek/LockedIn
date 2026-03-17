@@ -16,7 +16,7 @@ const EXERCISES: Record<string, string[]> = {
 type Props = NativeStackScreenProps<RootStackParamList, 'Exercises'>
 
 export default function ExerciseListScreen({ navigation, route }: Props) {
-  const { subMuscle } = route.params
+  const { muscleGroup, subMuscle } = route.params
   const exercises = EXERCISES[subMuscle] ?? []
 
   return (
@@ -27,6 +27,8 @@ export default function ExerciseListScreen({ navigation, route }: Props) {
           style={styles.button}
           onPress={() =>
             navigation.navigate('ExerciseDetail', {
+              muscleGroup,
+              subMuscle,
               exerciseName: exercise,
             })
           }
