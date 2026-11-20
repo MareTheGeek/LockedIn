@@ -42,6 +42,7 @@ const TabLayout = () => {
           backgroundColor: colors.primary,
           borderTopWidth: 0,
           elevation: 0,
+          // display: 'none'
         },
         tabBarItemStyle: {
           paddingVertical: tabBar.height / 2 - tabBar.iconFrame,

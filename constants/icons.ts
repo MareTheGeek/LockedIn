@@ -9,6 +9,14 @@ import insightsFocused from '@/assets/icons/insightsFocused.svg'
 import profileFocused from '@/assets/icons/profileFocused.svg'
 import sessionHistoryFocused from '@/assets/icons/session-historyFocused.svg'
 
+import exercise from '@/assets/icons/exercise.svg'
+import checkmark from '@/assets/icons/checkmark.svg'
+import settings from '@/assets/icons/settings.svg'
+import close from '@/assets/icons/close.svg'
+import buttonGo from '@/assets/icons/button-go.svg'
+import arrowDown from '@/assets/icons/arrow-down.svg'
+import arrowDownDisabled from '@/assets/icons/arrow-down-disabled.svg'
+
 export const icons = {
   notFocused: {
     home,
@@ -23,6 +31,13 @@ export const icons = {
     insightsFocused,
     profileFocused,
   },
+  exercise,
+  checkmark,
+  settings,
+  close,
+  buttonGo,
+  arrowDown,
+  arrowDownDisabled,
 } as const
 
 export type IconKey = keyof typeof icons

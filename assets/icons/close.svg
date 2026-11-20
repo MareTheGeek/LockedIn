@@ -1,0 +1,8 @@
+<svg width="640" height="640" viewBox="0 0 640 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="stroke0_256_2" fill="white">
+<path d="M0 20C0 8.95431 8.95431 0 20 0H620C631.046 0 640 8.95431 640 20V620C640 631.046 631.046 640 620 640H20C8.95431 640 0 631.046 0 620V20Z"/>
+</mask>
+<rect width="640" height="640" rx="20" stroke-width="60" stroke-linejoin="round" stroke="#808080" mask="url(#stroke0_256_2)"/>
+<path d="M177.949 177.78L462.379 462.21" stroke-width="40" stroke-linecap="round" stroke="#808080"/>
+<path d="M177.79 462.22L462.22 177.79" stroke-width="40" stroke-linecap="round" stroke="#808080"/>
+</svg>

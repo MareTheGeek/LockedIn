@@ -4,7 +4,9 @@ export const colors = {
   accent1: '#fdbe01',
   accent2: '#fd5800',
   accent3: '#12f337',
-  disabled: '#808080',
+  disabled1: '#808080',
+  disabled2: '#404040',
+  destructive: '#DC2626',
 } as const
 
 export const spacing = {
@@ -27,6 +29,7 @@ export const spacing = {
   20: 80,
   24: 96,
   30: 120,
+  60: 240,
 } as const
 
 export const components = {
